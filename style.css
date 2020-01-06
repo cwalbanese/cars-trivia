@@ -28,3 +28,42 @@ h2 {
 h1 {
   font-size: 48px;
 }
+
+.main {
+  background: white;
+  width: 75%;
+  margin: 50px auto;
+  border-radius: 20px;
+  border: solid 10px #80a7bf;
+  padding: 10px;
+}
+
+.score {
+  float: right;
+  color: #d93a2b;
+  font-family: 'Rubik', sans-serif;
+}
+
+.score-header {
+  margin: 10px;
+}
+
+.reset,
+.start {
+  color: #d93a2b;
+  font-family: 'Rubik', sans-serif;
+  border: solid 2px #d93a2b;
+}
+
+.headline {
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 20px;
+}
+
+h4 {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #d93a2b;
+  display: inline;
+  padding: 20px;
+  font-style: italic;
+}
