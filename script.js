@@ -3,9 +3,11 @@ const start = document.querySelector('.start');
 const startingLine = document.querySelector('.starting-line');
 const question = document.querySelector('.question');
 const answersList = document.querySelector('.answer-list');
-const cars = ['Audi', 'BMW', 'Tesla', 'Volkswagen'];
 const score = document.querySelector('.current-score');
+let listItem = document.getElementsByTagName('li');
 let newButton = document.createElement('button');
+
+const cars = ['Audi', 'BMW', 'Tesla', 'Volkswagen'];
 const carsTwo = ['Lexus', 'Ferrari', 'Jaguar', 'Kia'];
 const carsThree = ['GMC', 'Chevrolet', 'Ford', 'Dodge'];
 const carsFour = ['Audi', 'Volkswagen', 'Porsche', 'Lamborghini'];
@@ -15,10 +17,20 @@ const carsSeven = ['Italy', 'Spain', 'Germany', 'France'];
 const carsEight = ['300 Million', '1 Billion', '500 Million', '600 Million'];
 const carsNine = ['1948', '1932', '1965', '1954'];
 const carsTen = ['8', '10', '12', '16'];
-let listItem = document.getElementsByTagName('li');
 
 reset.addEventListener('click', reloadPage);
 start.addEventListener('click', questionOne);
+answersList.addEventListener('mouseover', hover);
+
+function hover(evt) {
+  if (evt.target.localName === 'li') {
+    evt.target.style.color = '#D93A2B';
+    setTimeout(function() {
+      evt.target.style.color = '';
+    }, 750);
+  }
+  false;
+}
 
 function reloadPage() {
   location.reload();
@@ -79,18 +91,6 @@ function answerTwo(evt) {
     nextButton();
     newButton.addEventListener('click', questionThree);
   }
-}
-
-answersList.addEventListener('mouseover', hover);
-
-function hover(evt) {
-  if (evt.target.localName === 'li') {
-    evt.target.style.color = '#D93A2B';
-    setTimeout(function() {
-      evt.target.style.color = '';
-    }, 750);
-  }
-  false;
 }
 
 function questionThree() {
