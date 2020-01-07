@@ -7,6 +7,7 @@ const cars = ['Audi', 'BMW', 'Tesla', 'Volkswagen'];
 const score = document.querySelector('.current-score');
 let newButton = document.createElement('button');
 const carsTwo = ['Lexus', 'Ferrari', 'Jaguar', 'Kia'];
+const carsThree = ['GMC', 'Chevrolet', 'Ford', 'Dodge'];
 let listItem = document.getElementsByTagName('li');
 
 reset.addEventListener('click', reloadPage);
@@ -16,8 +17,13 @@ function reloadPage() {
   location.reload();
 }
 
+function nextButton() {
+  question.appendChild(newButton);
+  newButton.innerText = 'NEXT QUESTION';
+  newButton.classList = 'next';
+}
+
 function questionOne(evt) {
-  evt.preventDefault();
   startingLine.style.visibility = 'hidden';
   question.innerText =
     'Question 1: Which car company is leading in electric technology?';
@@ -35,22 +41,17 @@ function answerOne(evt) {
     question.innerText =
       'Correct! Tesla is leading the pack in the electric vehicle industry.';
     score.innerText = parseInt(score.innerText) + 1;
-    question.appendChild(newButton);
-    newButton.innerText = 'NEXT QUESTION';
-    newButton.classList = 'next';
+    nextButton();
     newButton.addEventListener('click', questionTwo);
   } else {
     question.innerText =
       'Incorrect, the correct answer we are looking for is Tesla!';
-    question.appendChild(newButton);
-    newButton.innerText = 'NEXT QUESTION';
-    newButton.classList = 'next';
+    nextButton();
     newButton.addEventListener('click', questionTwo);
   }
 }
 
 function questionTwo(evt) {
-  evt.preventDefault();
   question.innerText = 'Question 2: Which car company is built in Italy?';
   for (i = 0; i < 4; i++) {
     listItem[i].innerText = carsTwo[i];
@@ -63,16 +64,12 @@ function answerTwo(evt) {
   if (evt.target.className === 'Ferrari') {
     question.innerText = 'Correct! Ferrari are built and designed in Italy!';
     score.innerText = parseInt(score.innerText) + 1;
-    question.appendChild(newButton);
-    newButton.innerText = 'NEXT QUESTION';
-    newButton.classList = 'next';
+    nextButton();
     newButton.addEventListener('click', questionThree);
   } else {
     question.innerText =
       'Incorrect, the correct answer we are looking for is Ferrari!';
-    question.appendChild(newButton);
-    newButton.innerText = 'NEXT QUESTION';
-    newButton.classList = 'next';
+    nextButton();
     newButton.addEventListener('click', questionThree);
   }
 }
@@ -87,4 +84,27 @@ function hover(evt) {
     }, 500);
   }
   false;
+}
+
+function questionThree(evt) {
+  question.innerText = `Question 3: Which car company's logo is commonly referred to as "the bowtie"?`;
+  for (i = 0; i < 4; i++) {
+    listItem[i].innerText = carsThree[i];
+    listItem[i].classList = carsThree[i];
+    answersList.addEventListener('click', answerThree);
+  }
+}
+
+function answerThree(evt) {
+  if (evt.target.className === 'Chevrolet') {
+    question.innerText = `Correct! Chevrolet's logo resembles a bowtie!`;
+    score.innerText = parseInt(score.innerText) + 1;
+    nextButton();
+    newButton.addEventListener('click', questionFour);
+  } else {
+    question.innerText =
+      'Incorrect, the correct answer we are looking for is Chevrolet!';
+    nextButton();
+    newButton.addEventListener('click', questionFour);
+  }
 }
