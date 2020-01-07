@@ -76,3 +76,15 @@ function answerTwo(evt) {
     newButton.addEventListener('click', questionThree);
   }
 }
+
+answersList.addEventListener('mouseover', hover);
+
+function hover(evt) {
+  if (evt.target.localName === 'li') {
+    evt.target.style.color = '#D93A2B';
+    setTimeout(function() {
+      evt.target.style.color = '';
+    }, 500);
+  }
+  false;
+}

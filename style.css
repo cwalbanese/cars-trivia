@@ -54,6 +54,7 @@ h1 {
   color: #d93a2b;
   font-family: 'Rubik', sans-serif;
   border: solid 2px #d93a2b;
+  font-size: 14px;
 }
 
 .headline {
@@ -75,8 +76,12 @@ h4 {
   margin: 0px 5px 0px 0px;
 }
 
-ul#ul li {
+#ul li {
   display: inline;
   padding: 10px;
   font-family: 'Source Sans Pro', sans-serif;
+}
+
+.next {
+  margin-left: 20px;
 }
