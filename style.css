@@ -62,6 +62,10 @@ h1 {
   padding: 20px;
 }
 
+h3 {
+  font-size: 20px;
+}
+
 h4 {
   font-family: 'Source Sans Pro', sans-serif;
   color: #d93a2b;
@@ -80,6 +84,7 @@ h4 {
   display: inline;
   padding: 10px;
   font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
 }
 
 .next {
