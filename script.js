@@ -7,16 +7,16 @@ const score = document.querySelector('.current-score');
 let listItem = document.getElementsByTagName('li');
 let newButton = document.createElement('button');
 
-const cars = ['Audi', 'BMW', 'Tesla', 'Volkswagen'];
-const carsTwo = ['Lexus', 'Ferrari', 'Jaguar', 'Kia'];
-const carsThree = ['GMC', 'Chevrolet', 'Ford', 'Dodge'];
-const carsFour = ['Audi', 'Volkswagen', 'Porsche', 'Lamborghini'];
-const carsFive = ['1912', '1924', '1900', '1908'];
-const carsSix = ['engine', 'transmission', 'differential', 'throttle'];
-const carsSeven = ['Italy', 'Spain', 'Germany', 'France'];
-const carsEight = ['300 Million', '1 Billion', '500 Million', '600 Million'];
-const carsNine = ['1948', '1932', '1965', '1954'];
-const carsTen = ['8', '10', '12', '16'];
+const answers = ['Audi', 'BMW', 'Tesla', 'Volkswagen'];
+const answersTwo = ['Lexus', 'Ferrari', 'Jaguar', 'Kia'];
+const answersThree = ['GMC', 'Chevrolet', 'Ford', 'Dodge'];
+const answersFour = ['Audi', 'Volkswagen', 'Porsche', 'Lamborghini'];
+const answersFive = ['1912', '1924', '1900', '1908'];
+const answersSix = ['engine', 'transmission', 'differential', 'throttle'];
+const answersSeven = ['Italy', 'Spain', 'Germany', 'France'];
+const answersEight = ['300 Million', '1 Billion', '500 Million', '600 Million'];
+const answersNine = ['1948', '1932', '1965', '1954'];
+const answersTen = ['8', '10', '12', '16'];
 
 reset.addEventListener('click', reloadPage);
 start.addEventListener('click', questionOne);
@@ -41,6 +41,10 @@ function nextButton() {
   newButton.innerText = 'NEXT QUESTION';
   newButton.classList = 'next';
 }
+function finalScore() {
+  answersList.parentNode.removeChild(answersList);
+  question.innerText = `Congratulations, you finished the game with a score of ${score.innerText}/10!`;
+}
 
 function questionOne() {
   startingLine.style.visibility = 'hidden';
@@ -49,8 +53,8 @@ function questionOne() {
   for (i = 0; i < 4; i++) {
     let answer = document.createElement('li');
     answersList.appendChild(answer);
-    answer.innerText = cars[i];
-    answer.classList = cars[i];
+    answer.innerText = answers[i];
+    answer.classList = answers[i];
     answersList.addEventListener('click', answerOne);
   }
 }
@@ -73,8 +77,8 @@ function answerOne(evt) {
 function questionTwo() {
   question.innerText = 'Question 2: Which car company is built in Italy?';
   for (i = 0; i < 4; i++) {
-    listItem[i].innerText = carsTwo[i];
-    listItem[i].classList = carsTwo[i];
+    listItem[i].innerText = answersTwo[i];
+    listItem[i].classList = answersTwo[i];
     answersList.addEventListener('click', answerTwo);
   }
 }
@@ -96,8 +100,8 @@ function answerTwo(evt) {
 function questionThree() {
   question.innerText = `Question 3: Which car company's logo is commonly referred to as "the bowtie"?`;
   for (i = 0; i < 4; i++) {
-    listItem[i].innerText = carsThree[i];
-    listItem[i].classList = carsThree[i];
+    listItem[i].innerText = answersThree[i];
+    listItem[i].classList = answersThree[i];
     answersList.addEventListener('click', answerThree);
   }
 }
@@ -119,8 +123,8 @@ function answerThree(evt) {
 function questionFour() {
   question.innerText = `Question 4: Which car company owns the other three?`;
   for (i = 0; i < 4; i++) {
-    listItem[i].innerText = carsFour[i];
-    listItem[i].classList = carsFour[i];
+    listItem[i].innerText = answersFour[i];
+    listItem[i].classList = answersFour[i];
     answersList.addEventListener('click', answerFour);
   }
 }
@@ -142,8 +146,8 @@ function answerFour(evt) {
 function questionFive() {
   question.innerText = `Question 5: In what year did Henry Ford create the iconic Model T?`;
   for (i = 0; i < 4; i++) {
-    listItem[i].innerText = carsFive[i];
-    listItem[i].classList = carsFive[i];
+    listItem[i].innerText = answersFive[i];
+    listItem[i].classList = answersFive[i];
     answersList.addEventListener('click', answerFive);
   }
 }
@@ -165,8 +169,8 @@ function answerFive(evt) {
 function questionSix() {
   question.innerText = `Question 6: Your car's horsepower comes from where?`;
   for (i = 0; i < 4; i++) {
-    listItem[i].innerText = carsSix[i];
-    listItem[i].classList = carsSix[i];
+    listItem[i].innerText = answersSix[i];
+    listItem[i].classList = answersSix[i];
     answersList.addEventListener('click', answerSix);
   }
 }
@@ -188,8 +192,8 @@ function answerSix(evt) {
 function questionSeven() {
   question.innerText = `Question 7: The Nurburgring is a famous racetrack in what country?`;
   for (i = 0; i < 4; i++) {
-    listItem[i].innerText = carsSeven[i];
-    listItem[i].classList = carsSeven[i];
+    listItem[i].innerText = answersSeven[i];
+    listItem[i].classList = answersSeven[i];
     answersList.addEventListener('click', answerSeven);
   }
 }
@@ -209,17 +213,17 @@ function answerSeven(evt) {
 }
 
 function questionEight() {
-  question.innerText = `Question 8: How many cars are estimated to be on Earth?`;
+  question.innerText = `Question 8: How many answers are estimated to be on Earth?`;
   for (i = 0; i < 4; i++) {
-    listItem[i].innerText = carsEight[i];
-    listItem[i].classList = carsEight[i];
+    listItem[i].innerText = answersEight[i];
+    listItem[i].classList = answersEight[i];
     answersList.addEventListener('click', answerEight);
   }
 }
 
 function answerEight(evt) {
   if (evt.target.className === '1 Billion') {
-    question.innerText = `Correct! Over 1 Billion Cars!`;
+    question.innerText = `Correct! Over 1 Billion answers!`;
     score.innerText = parseInt(score.innerText) + 1;
     nextButton();
     newButton.addEventListener('click', questionNine);
@@ -234,8 +238,8 @@ function answerEight(evt) {
 function questionNine() {
   question.innerText = `Question 9: In what year was NASCAR founded?`;
   for (i = 0; i < 4; i++) {
-    listItem[i].innerText = carsNine[i];
-    listItem[i].classList = carsNine[i];
+    listItem[i].innerText = answersNine[i];
+    listItem[i].classList = answersNine[i];
     answersList.addEventListener('click', answerNine);
   }
 }
@@ -257,8 +261,8 @@ function answerNine(evt) {
 function questionTen() {
   question.innerText = `Question 10: The supercar Bugatti Veyron has how many engine cylinders?`;
   for (i = 0; i < 4; i++) {
-    listItem[i].innerText = carsTen[i];
-    listItem[i].classList = carsTen[i];
+    listItem[i].innerText = answersTen[i];
+    listItem[i].classList = answersTen[i];
     answersList.addEventListener('click', answerTen);
   }
 }
@@ -273,9 +277,4 @@ function answerTen(evt) {
       'Incorrect, the correct answer we are looking for is 16!';
     setTimeout(finalScore, 3000);
   }
-}
-
-function finalScore() {
-  answersList.parentNode.removeChild(answersList);
-  question.innerText = `Congratulations, you finished the game with a score of ${score.innerText}/10!`;
 }
