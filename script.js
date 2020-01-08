@@ -133,9 +133,6 @@ function answerList(evt) {
     score.innerText = parseInt(score.innerText) + 1;
     nextButton();
     answersList.removeEventListener('click', answerList);
-    if (currentQuestion === 10) {
-      setTimeout(finalScore, 3000);
-    }
   }
 
   if (evt.target.className !== questions[currentQuestion].correctAnswer) {
