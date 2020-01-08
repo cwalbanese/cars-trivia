@@ -133,7 +133,7 @@ function answerFour(evt) {
     newButton.addEventListener('click', questionFive);
   } else {
     question.innerText =
-      'Incorrect, the correct answer we are looking for is Volkswagen!';
+      'Incorrect, the correct answer we are looking for is VW!';
     nextButton();
     newButton.addEventListener('click', questionFive);
   }
@@ -267,8 +267,15 @@ function answerTen(evt) {
   if (evt.target.className === '16') {
     question.innerText = `Correct! The Bugatti Veyron has a 16 cylinder engine! Wow!`;
     score.innerText = parseInt(score.innerText) + 1;
+    setTimeout(finalScore, 3000);
   } else {
     question.innerText =
       'Incorrect, the correct answer we are looking for is 16!';
+    setTimeout(finalScore, 3000);
   }
+}
+
+function finalScore() {
+  answersList.parentNode.removeChild(answersList);
+  question.innerText = `Congratulations, you finished the game with a score of ${score.innerText}/10!`;
 }
