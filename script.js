@@ -22,6 +22,10 @@ reset.addEventListener('click', reloadPage);
 start.addEventListener('click', questionOne);
 answersList.addEventListener('mouseover', hover);
 
+function reloadPage() {
+  location.reload();
+}
+
 function hover(evt) {
   if (evt.target.localName === 'li') {
     evt.target.style.color = '#D93A2B';
@@ -30,10 +34,6 @@ function hover(evt) {
     }, 750);
   }
   false;
-}
-
-function reloadPage() {
-  location.reload();
 }
 
 function nextButton() {
