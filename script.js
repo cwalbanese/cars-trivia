@@ -30,7 +30,8 @@ const questions = [
     answers: ['Audi', 'Volkswagen', 'Porsche', 'Lamborghini'],
     correctAnswer: 'Volkswagen',
     correctResponse: `Correct! Volkswagen owns many car manufacturers!`,
-    incorrectResponse: 'Incorrect, the correct answer we are looking for is VW!'
+    incorrectResponse:
+      'Incorrect, the correct answer we are looking for is Volkswagen!'
   },
   {
     question: `Question 5: In what year did Henry Ford create the iconic Model T?`,
@@ -145,7 +146,7 @@ function answerList(evt) {
 
 function nextButton() {
   question.appendChild(newButton);
-  newButton.innerText = 'NEXT QUESTION';
+  newButton.innerText = 'NEXT';
   newButton.classList = 'next';
 }
 
