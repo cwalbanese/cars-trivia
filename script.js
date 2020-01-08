@@ -111,6 +111,10 @@ function hover(evt) {
   false;
 }
 function questionList() {
+  if (currentQuestion === 10) {
+    finalScore();
+    return;
+  }
   startingLine.style.visibility = 'hidden';
   question.innerText = questions[currentQuestion].question;
   answersList.innerHTML = '';
@@ -129,6 +133,9 @@ function answerList(evt) {
     score.innerText = parseInt(score.innerText) + 1;
     nextButton();
     answersList.removeEventListener('click', answerList);
+    if (currentQuestion === 10) {
+      setTimeout(finalScore, 3000);
+    }
   }
 
   if (evt.target.className !== questions[currentQuestion].correctAnswer) {
@@ -138,14 +145,14 @@ function answerList(evt) {
   }
   currentQuestion++;
 }
+
 function nextButton() {
   question.appendChild(newButton);
   newButton.innerText = 'NEXT QUESTION';
   newButton.classList = 'next';
 }
+
 function finalScore() {
   answersList.parentNode.removeChild(answersList);
   question.innerText = `Congratulations, you finished the game with a score of ${score.innerText}/10!`;
 }
-
-//     setTimeout(finalScore, 3000);
