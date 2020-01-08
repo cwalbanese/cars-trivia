@@ -39,6 +39,45 @@ const questions = [
     correctResponse: `Correct! 1908 is the year of the Model T!`,
     incorrectResponse:
       'Incorrect, the correct answer we are looking for is 1908!'
+  },
+  {
+    question: `Question 6: Your car's horsepower comes from where?`,
+    answers: ['engine', 'transmission', 'differential', 'throttle'],
+    correctAnswer: 'engine',
+    correctResponse: `Correct! The engine makes all that horsepower!`,
+    incorrectResponse:
+      'Incorrect, the correct answer we are looking for is engine!'
+  },
+  {
+    question: `Question 7: The Nurburgring is a famous racetrack in what country?`,
+    answers: ['Italy', 'Spain', 'Germany', 'France'],
+    correctAnswer: 'Germany',
+    correctResponse: `Correct! The Nurburgring is in Germany!`,
+    incorrectResponse:
+      'Incorrect, the correct answer we are looking for is Germany!'
+  },
+  {
+    question: `Question 8: How many cars are estimated to be on Earth?`,
+    answers: ['300 Million', '1 Billion', '500 Million', '600 Million'],
+    correctAnswer: '1 Billion',
+    correctResponse: `Correct! Over 1 Billion cars!`,
+    incorrectResponse:
+      'Incorrect, the correct answer we are looking for is 1 Billion!'
+  },
+  {
+    question: `Question 9: In what year was NASCAR founded?`,
+    answers: ['1948', '1932', '1965', '1954'],
+    correctAnswer: '1948',
+    correctResponse: `Correct! NASCAR was founded in 1948!`,
+    incorrectResponse:
+      'Incorrect, the correct answer we are looking for is 1948!'
+  },
+  {
+    question: `Question 10: The supercar Bugatti Veyron has how many engine cylinders?`,
+    answers: ['8', '10', '12', '16'],
+    correctAnswer: '16',
+    correctResponse: `Correct! The Bugatti Veyron has a 16 cylinder engine! Wow!`,
+    incorrectResponse: 'Incorrect, the correct answer we are looking for is 16!'
   }
 ];
 
@@ -51,12 +90,6 @@ const score = document.querySelector('.current-score');
 let listItem = document.getElementsByTagName('li');
 let newButton = document.createElement('button');
 let currentQuestion = 0;
-
-// const answersSix = ['engine', 'transmission', 'differential', 'throttle'];
-// const answersSeven = ['Italy', 'Spain', 'Germany', 'France'];
-// const answersEight = ['300 Million', '1 Billion', '500 Million', '600 Million'];
-// const answersNine = ['1948', '1932', '1965', '1954'];
-// const answersTen = ['8', '10', '12', '16'];
 
 answersList.addEventListener('click', answerList);
 reset.addEventListener('click', reloadPage);
@@ -115,115 +148,4 @@ function finalScore() {
   question.innerText = `Congratulations, you finished the game with a score of ${score.innerText}/10!`;
 }
 
-// function questionSix() {
-//   question.innerText = `Question 6: Your car's horsepower comes from where?`;
-//   for (i = 0; i < 4; i++) {
-//     listItem[i].innerText = answersSix[i];
-//     listItem[i].classList = answersSix[i];
-//     answersList.addEventListener('click', answerSix);
-//   }
-// }
-
-// function answerSix(evt) {
-//   if (evt.target.className === 'engine') {
-//     question.innerText = `Correct! The engine makes all that horsepower!`;
-//     score.innerText = parseInt(score.innerText) + 1;
-//     nextButton();
-//     newButton.addEventListener('click', questionSeven);
-//   } else {
-//     question.innerText =
-//       'Incorrect, the correct answer we are looking for is engine!';
-//     nextButton();
-//     newButton.addEventListener('click', questionSeven);
-//   }
-// }
-
-// function questionSeven() {
-//   question.innerText = `Question 7: The Nurburgring is a famous racetrack in what country?`;
-//   for (i = 0; i < 4; i++) {
-//     listItem[i].innerText = answersSeven[i];
-//     listItem[i].classList = answersSeven[i];
-//     answersList.addEventListener('click', answerSeven);
-//   }
-// }
-
-// function answerSeven(evt) {
-//   if (evt.target.className === 'Germany') {
-//     question.innerText = `Correct! The Nurburgring is in Germany!`;
-//     score.innerText = parseInt(score.innerText) + 1;
-//     nextButton();
-//     newButton.addEventListener('click', questionEight);
-//   } else {
-//     question.innerText =
-//       'Incorrect, the correct answer we are looking for is Germany!';
-//     nextButton();
-//     newButton.addEventListener('click', questionEight);
-//   }
-// }
-
-// function questionEight() {
-//   question.innerText = `Question 8: How many answers are estimated to be on Earth?`;
-//   for (i = 0; i < 4; i++) {
-//     listItem[i].innerText = answersEight[i];
-//     listItem[i].classList = answersEight[i];
-//     answersList.addEventListener('click', answerEight);
-//   }
-// }
-
-// function answerEight(evt) {
-//   if (evt.target.className === '1 Billion') {
-//     question.innerText = `Correct! Over 1 Billion answers!`;
-//     score.innerText = parseInt(score.innerText) + 1;
-//     nextButton();
-//     newButton.addEventListener('click', questionNine);
-//   } else {
-//     question.innerText =
-//       'Incorrect, the correct answer we are looking for is 1 Billion!';
-//     nextButton();
-//     newButton.addEventListener('click', questionNine);
-//   }
-// }
-
-// function questionNine() {
-//   question.innerText = `Question 9: In what year was NASCAR founded?`;
-//   for (i = 0; i < 4; i++) {
-//     listItem[i].innerText = answersNine[i];
-//     listItem[i].classList = answersNine[i];
-//     answersList.addEventListener('click', answerNine);
-//   }
-// }
-
-// function answerNine(evt) {
-//   if (evt.target.className === '1948') {
-//     question.innerText = `Correct! NASCAR was founded in 1948!`;
-//     score.innerText = parseInt(score.innerText) + 1;
-//     nextButton();
-//     newButton.addEventListener('click', questionTen);
-//   } else {
-//     question.innerText =
-//       'Incorrect, the correct answer we are looking for is 1948!';
-//     nextButton();
-//     newButton.addEventListener('click', questionTen);
-//   }
-// }
-
-// function questionTen() {
-//   question.innerText = `Question 10: The supercar Bugatti Veyron has how many engine cylinders?`;
-//   for (i = 0; i < 4; i++) {
-//     listItem[i].innerText = answersTen[i];
-//     listItem[i].classList = answersTen[i];
-//     answersList.addEventListener('click', answerTen);
-//   }
-// }
-
-// function answerTen(evt) {
-//   if (evt.target.className === '16') {
-//     question.innerText = `Correct! The Bugatti Veyron has a 16 cylinder engine! Wow!`;
-//     score.innerText = parseInt(score.innerText) + 1;
 //     setTimeout(finalScore, 3000);
-//   } else {
-//     question.innerText =
-//       'Incorrect, the correct answer we are looking for is 16!';
-//     setTimeout(finalScore, 3000);
-//   }
-// }
