@@ -2,8 +2,6 @@
 
 ### A trivia game all about cars, for anyone up to the challenge. Start your engines!
 
-## Project Preview
+## Project Home Page
 
-![Image of Project Preview]
-
-(images/preview.png)
+![Image of Project Preview](images/preview.png)
