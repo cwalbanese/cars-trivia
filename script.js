@@ -82,21 +82,21 @@ const questions = [
   }
 ];
 
-let question = document.querySelector('.question');
+let currentQuestion = 0;
+const question = document.querySelector('.question');
+const listItem = document.getElementsByTagName('li');
+const newButton = document.createElement('button');
 const reset = document.querySelector('.reset');
 const start = document.querySelector('.start');
 const startingLine = document.querySelector('.starting-line');
 const answersList = document.querySelector('.answer-list');
 const score = document.querySelector('.current-score');
-let listItem = document.getElementsByTagName('li');
-let newButton = document.createElement('button');
-let currentQuestion = 0;
 
-answersList.addEventListener('click', answerList);
 reset.addEventListener('click', reloadPage);
-start.addEventListener('click', questionList);
-answersList.addEventListener('mouseover', hover);
 newButton.addEventListener('click', questionList);
+start.addEventListener('click', questionList);
+answersList.addEventListener('click', answerList);
+answersList.addEventListener('mouseover', hover);
 
 function reloadPage() {
   location.reload();
@@ -110,6 +110,16 @@ function hover(evt) {
     }, 750);
   }
   false;
+}
+function nextButton() {
+  question.appendChild(newButton);
+  newButton.innerText = 'NEXT';
+  newButton.classList = 'next';
+}
+
+function finalScore() {
+  answersList.parentNode.removeChild(answersList);
+  question.innerText = `Congratulations, you finished the game with a score of ${score.innerText}/10!`;
 }
 function questionList() {
   if (currentQuestion === 10) {
@@ -142,15 +152,4 @@ function answerList(evt) {
     answersList.removeEventListener('click', answerList);
   }
   currentQuestion++;
-}
-
-function nextButton() {
-  question.appendChild(newButton);
-  newButton.innerText = 'NEXT';
-  newButton.classList = 'next';
-}
-
-function finalScore() {
-  answersList.parentNode.removeChild(answersList);
-  question.innerText = `Congratulations, you finished the game with a score of ${score.innerText}/10!`;
 }
