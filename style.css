@@ -21,14 +21,6 @@ h1 {
   border: 0;
 }
 
-h2 {
-  margin: 0;
-}
-
-h1 {
-  font-size: 48px;
-}
-
 .main {
   background: white;
   width: 75%;
@@ -38,29 +30,12 @@ h1 {
   padding: 15px;
 }
 
-.score {
-  float: right;
-  color: #d93a2b;
-  font-family: 'Rubik', sans-serif;
+h1 {
+  font-size: 48px;
 }
 
-.score-header {
-  margin: 10px;
-}
-
-.reset,
-.start,
-.next {
-  color: #d93a2b;
-  font-family: 'Rubik', sans-serif;
-  border: solid 2px #d93a2b;
-  font-size: 14px;
-  background-color: white;
-}
-
-.headline {
-  font-family: 'Source Sans Pro', sans-serif;
-  padding: 20px;
+h2 {
+  margin: 0;
 }
 
 h3 {
@@ -75,6 +50,35 @@ h4 {
   font-style: italic;
 }
 
+.headline {
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 20px;
+}
+
+.score-header {
+  margin: 10px;
+}
+
+.score {
+  float: right;
+  color: #d93a2b;
+  font-family: 'Rubik', sans-serif;
+}
+
+.reset,
+.start,
+.next {
+  color: #d93a2b;
+  font-family: 'Rubik', sans-serif;
+  border: solid 2px #d93a2b;
+  font-size: 14px;
+  background-color: white;
+}
+
+.next {
+  margin-left: 20px;
+}
+
 .flag {
   width: 30px;
   height: 15px;
@@ -86,8 +90,4 @@ h4 {
   padding: 10px;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 20px;
-}
-
-.next {
-  margin-left: 20px;
 }
