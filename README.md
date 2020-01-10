@@ -1,6 +1,6 @@
 # Car Trivia Game: Test Your Knowledge
 
-### A trivia game all about cars, for anyone up to the challenge. Start your engines!
+### A trivia game all about cars. For anyone up to the challenge: Start your engines!
 
 ## Project Home Page
 
@@ -12,7 +12,7 @@
 
 ## Technology
 
-#### The technologies used for this project are HTML5, CSS, && JavaScript.
+#### The technologies used for this project are HTML5, CSS, and JavaScript.
 
 ## Install
 
