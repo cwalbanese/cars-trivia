@@ -97,6 +97,7 @@ newButton.addEventListener('click', questionList);
 start.addEventListener('click', questionList);
 answersList.addEventListener('click', answerList);
 answersList.addEventListener('mouseover', hover);
+answersList.addEventListener('mouseout', hoverEnd);
 
 function reloadPage() {
   location.reload();
@@ -105,9 +106,14 @@ function reloadPage() {
 function hover(evt) {
   if (evt.target.localName === 'li') {
     evt.target.style.color = '#D93A2B';
-    setTimeout(function() {
-      evt.target.style.color = '';
-    }, 750);
+  }
+}
+function hoverEnd(evt) {
+  if (evt.target.localName === 'li') {
+    evt.target.style.color = '';
+    // setTimeout(function() {
+    //   evt.target.style.color = '';
+    // }, 750);
   }
   false;
 }
