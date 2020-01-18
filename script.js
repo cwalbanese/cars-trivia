@@ -111,9 +111,6 @@ function hover(evt) {
 function hoverEnd(evt) {
   if (evt.target.localName === 'li') {
     evt.target.style.color = '';
-    // setTimeout(function() {
-    //   evt.target.style.color = '';
-    // }, 750);
   }
   false;
 }
