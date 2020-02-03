@@ -112,7 +112,7 @@ h4 {
 
 @media (max-width: 1000px) {
   .main {
-    height: 70vh;
+    height: 100%;
   }
 
   .headline {
