@@ -67,11 +67,6 @@ h4 {
   font-family: 'Rubik', sans-serif;
 }
 
-@media only screen and (max-width: 650px) {
-  .score-header {
-    display: grid;
-  }
-}
 .reset,
 .start,
 .next {
@@ -110,6 +105,12 @@ h4 {
   margin-left: -10px;
 }
 
+@media (max-width: 600px) {
+  .main {
+    width: 80vw;
+  }
+}
+
 @media (max-width: 1000px) {
   .main {
     height: 100%;
@@ -118,5 +119,9 @@ h4 {
   .headline {
     margin-top: 0 0 0 0;
     padding: 0;
+  }
+
+  .score-header {
+    display: grid;
   }
 }
