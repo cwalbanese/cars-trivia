@@ -2,6 +2,10 @@ html {
   background: url(images/background.jpeg) no-repeat center center fixed;
 }
 
+button {
+  cursor: pointer;
+}
+
 header {
   text-align: center;
   background: #80a7bf;
@@ -103,6 +107,7 @@ h4 {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 20px;
   margin-left: -10px;
+  cursor: pointer;
 }
 
 @media (max-width: 600px) {
